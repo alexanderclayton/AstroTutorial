@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css'
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
 
@@ -13,7 +13,7 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
@@ -21,28 +21,7 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
-        h1 {
-          color: purple;
-          font-size: 4rem;
-        }
-
-        .skill {
-            color: var(--skillColor);
-            font-weight: var(--fontWeight);
-            text-transform: var(--textCase);
-        }
-      </style>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+<BaseLayout>
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -87,5 +66,5 @@ const textCase = "uppercase";
         <p>My goal is not 3 days.</p>
       )
     }
-  </body>
+</BaseLayout>
 </html>
